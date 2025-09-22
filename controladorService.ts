@@ -10,6 +10,7 @@ export interface ColeccionItem {  id?: string | number;}
 export interface ItemCalculable {  price: number;  cantidad: number;}
 
 @Injectable({  providedIn: 'root'})
+  
 export class ControladorService<T extends ColeccionItem> {
 
   // Dependencias
