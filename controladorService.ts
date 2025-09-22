@@ -24,7 +24,7 @@ export class ControladorService<T extends ColeccionItem> {
   public readonly total = computed( () => {    const items = this._coleccion() as (T & ItemCalculable)[];    return items.reduce((acc, item) => { if (item.price && item.cantidad) { return acc + (item.price * item.cantidad); }      return acc;    }, 0);  } );
   public readonly totalItems = computed( () => {    return this._coleccion().length;  } );
 
-  // M{etodos
+  // Métodos
   agregarItem(item: T): void {    this._coleccion.update(coleccion => [...coleccion, item]);  }
   eliminarItem(id: string | number): void {    this._coleccion.update(coleccion => coleccion.filter(i => i.id !== id));  }
   limpiarColeccion(): void {    this._coleccion.set([]);  }
